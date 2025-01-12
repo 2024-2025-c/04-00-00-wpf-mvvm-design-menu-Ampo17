@@ -33,6 +33,20 @@
         <schoolGradesView:SchoolGradesView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type schoolGradesViewModel:CurrentTimeViewModel}">
+        <schoolGradesView:CurrentTimeView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type schoolGradesViewModel:EndOfSemesterViewModel}">
+        <schoolGradesView:EndOfSemesterView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type schoolGradesViewModel:EndOfYearViewModel}">
+        <schoolGradesView:EndOfYearView/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type schoolGradesViewModel:TaughtClassesViewModel}">
+        <schoolGradesView:TaughtClassesView/>
+    </DataTemplate>
+
+
 
 
 </ResourceDictionary>

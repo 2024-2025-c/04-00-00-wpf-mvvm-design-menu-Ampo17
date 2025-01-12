@@ -13,6 +13,7 @@ using KretaBasicSchoolSystem.Desktop.Views.SchoolClasses;
 using KretaBasicSchoolSystem.Desktop.Views.SchoolGrades;
 using KretaBasicSchoolSystem.Desktop.Views.SchoolSubjects;
 using Microsoft.Extensions.DependencyInjection;
+using System.Runtime.Serialization.DataContracts;
 
 namespace KretaDesktop.Extensions
 {
@@ -81,7 +82,40 @@ namespace KretaDesktop.Extensions
                 DataContext = s.GetRequiredService<SchoolGradesViewModel>()
             });
 
+            // School Grades
+            //CurrentTime
+            services.AddSingleton<CurrentTimeViewModel>();
+            services.AddSingleton<CurrentTimeView>(s => new CurrentTimeView{
+                DataContext = s.GetRequiredService<CurrentTimeViewModel>()
+            });
+
+            // School Grades
+            //EndOfSemester
+            services.AddSingleton<EndOfSemesterViewModel>();
+            services.AddSingleton<EndOfSemesterView>(s => new EndOfSemesterView
+            {
+                DataContext = s.GetRequiredService<EndOfSemesterViewModel>()
+
+            });
+
+            // School Grades
+            //EndOfYear
+            services.AddSingleton<EndOfYearViewModel>();
+            services.AddSingleton<EndOfYearView>(s => new EndOfYearView
+            {
+                DataContext = s.GetRequiredService<EndOfYearViewModel>()
+
+            });
+
+            // School Grades
+            //EndOfSemester
+            services.AddSingleton<TaughtClassesViewModel>();
+            services.AddSingleton<TaughtClassesView>(s => new TaughtClassesView
+            {
+                DataContext = s.GetRequiredService<TaughtClassesViewModel>()
+
+            });
 
         }
-    }
+}
 }
