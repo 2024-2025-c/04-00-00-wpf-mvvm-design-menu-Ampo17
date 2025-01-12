@@ -5,6 +5,7 @@ using KretaBasicSchoolSystem.Desktop.ViewModels.Base;
 using KretaBasicSchoolSystem.Desktop.ViewModels.ControlPanel;
 using KretaBasicSchoolSystem.Desktop.ViewModels.SchoolCitizens;
 using KretaBasicSchoolSystem.Desktop.ViewModels.SchoolClasses;
+using KretaBasicSchoolSystem.Desktop.ViewModels.SchoolGrades;
 using KretaBasicSchoolSystem.Desktop.ViewModels.SchoolSubjects;
 using KretaBasicSchoolSystem.Desktop.Views.SchoolSubjects;
 
@@ -16,6 +17,7 @@ namespace KretaBasicSchoolSystem.Desktop.ViewModels
         private SchoolCitizensViewModel _schoolCitizensViewModel;
         private SchoolClassesViewModel _schoolClassesViewModel;
         private SchoolSubjectsViewModel _schoolSubjectsViewModel;
+        private SchoolGradesViewModel _schoolGradesViewModel;
 
 
 
@@ -23,7 +25,8 @@ namespace KretaBasicSchoolSystem.Desktop.ViewModels
             ControlPanelViewModel controlPanelViewModel,
             SchoolCitizensViewModel schoolCitizensViewModel,
             SchoolClassesViewModel schoolClassViewModel,
-            SchoolSubjectsViewModel schoolSubjectsViewModel
+            SchoolSubjectsViewModel schoolSubjectsViewModel,
+            SchoolGradesViewModel schoolGradesViewModel
 
             )
         {
@@ -31,6 +34,7 @@ namespace KretaBasicSchoolSystem.Desktop.ViewModels
             _schoolCitizensViewModel = schoolCitizensViewModel;
             _schoolClassesViewModel = schoolClassViewModel;
             _schoolSubjectsViewModel = schoolSubjectsViewModel;
+            _schoolGradesViewModel = schoolGradesViewModel;
 
 
 
@@ -77,5 +81,14 @@ namespace KretaBasicSchoolSystem.Desktop.ViewModels
             Icon = IconChar.ChalkboardUser;
             CurrentChildView = _schoolSubjectsViewModel;
         }
+
+        [RelayCommand]
+        public void ShowSchoolGrades()
+        {
+            Caption = "Osztályzatok";
+            Icon=IconChar.SolarPanel;
+            CurrentChildView = _schoolGradesViewModel;
+        }
+
     }
 }
